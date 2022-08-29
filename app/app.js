@@ -4,7 +4,10 @@ const handleRequest = (request) => {
   const method = request.method;
   const url = new URL(request.url);
   const path = url.pathname;
-  const message = `${method} request made to path ${path}`;
+  let message = "There is nothing to see here...";
+  if (method === "PEEK" && path === "/secret") {
+    message = "Peeking at secret data...";
+  }
   return new Response(message);
 };
 
