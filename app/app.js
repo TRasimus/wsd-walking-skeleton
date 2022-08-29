@@ -2,7 +2,9 @@ import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 
 const handleRequest = (request) => {
   const method = request.method;
-  const message = `You made a request with method ${method}`;
+  const url = new URL(request.url);
+  const path = url.pathname;
+  const message = `${method} request made to path ${path}`;
   return new Response(message);
 };
 
