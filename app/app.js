@@ -1,11 +1,11 @@
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 
 const handleRequest = (request) => {
-  const url = new URL(request.url);
-  const path = url.pathname;
-  let message = "Nothing to see here.";
-  if (path.includes("secret")) {
-    message = "The recipe is: ...";
+  let message = "Unable to comply...";
+  if (request.method === "GET") {
+    message = "Retrieving data...";
+  } else if (request.method === "POST") {
+    message = "Posting data...";
   }
   return new Response(message);
 };
