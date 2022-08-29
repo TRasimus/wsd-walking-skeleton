@@ -1,12 +1,8 @@
 import { serve } from "https://deno.land/std@0.140.0/http/server.ts";
 
 const handleRequest = (request) => {
-  let message = "Unable to comply...";
-  if (request.method === "GET") {
-    message = "Retrieving data...";
-  } else if (request.method === "POST") {
-    message = "Posting data...";
-  }
+  const method = request.method;
+  const message = `You made a request with method ${method}`;
   return new Response(message);
 };
 
