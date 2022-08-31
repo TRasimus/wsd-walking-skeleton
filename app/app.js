@@ -16,4 +16,4 @@ if (Deno.args.length > 0) {
   port = Number(lastArgument);
 }
 
-serve(handleRequest, { port: 7777 });
+serve(handleRequest, { port: port });
