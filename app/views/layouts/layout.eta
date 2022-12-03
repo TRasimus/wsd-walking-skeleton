@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Layouts!</title>
+  </head>
+  <body>
+    <%~ includeFile("./partials/one.eta") %>
+    <%~ includeFile("./partials/two.eta") %>
+    <%~ it.body %>
+  </body>
+</html>

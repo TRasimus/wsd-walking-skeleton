@@ -1,0 +1,25 @@
+<h1>Songs!</h1>
+<form method="POST">
+  <input type="text" name="name" />
+  <input type="number" name="rating" />
+  <input type="submit" value="Submit!" />
+</form>
+
+<table>
+  <tr>
+    <th>Song name</th>
+    <th>Rating</th>
+    <th>Delete</th>
+  </tr>
+  <% it.songs.forEach((song) => { %>
+    <tr>
+      <th><%= song.name %></th>
+      <th><%= song.rating %></th>
+      <th>
+        <form method='POST' action='/songs/<%= song.id %>/delete'>
+          <input type='submit' value='Delete' />
+        </form>
+      </th>
+    </tr>
+  <% }); %>
+</table>
